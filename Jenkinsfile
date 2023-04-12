@@ -16,11 +16,23 @@ pipeline {
                 println "Printing to Console"
             }
         }
-        post{
-            always{
-                emailext to: "popamircealaurentiu@yahoo.com",
-                subject: "Test Email",
-                body: "Test"
+        stage('AAA') {
+            steps {
+                echo "$(currentBuild.currentResult)"
+//                 if (currentBuild.currentResult == "SUCCESS") {
+//                     mail bcc: '', body: 'success', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
+//                 }
+//                 else {
+//                     mail bcc: '', body: 'failed', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
+//                 }
+            }
+        }
+        post {
+            success {
+                echo "${env.BUILD_URL} has result success"
+            }
+            failure {
+                echo "${env.BUILD_URL} has result fail"
             }
         }
     }
