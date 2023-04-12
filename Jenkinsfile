@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                //
+                println "Printing to Console"
             }
         }
         stage('Deploy') {
             steps {
-                //
+                println "Printing to Console"
             }
         }
     }
