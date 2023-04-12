@@ -16,14 +16,11 @@ pipeline {
                 println "Printing to Console"
             }
         }
-        stage('AAA'){
-            steps {
-                if (currentBuild.currentResult == "SUCCESS") {
-                    mail bcc: '', body: 'success', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
-                }
-                else {
-                    mail bcc: '', body: 'failed', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
-                }
+        post{
+            always{
+                emailext to: "popamircealaurentiu@yahoo.com",
+                subject: "Test Email",
+                body: "Test"
             }
         }
     }
