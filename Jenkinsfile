@@ -18,7 +18,7 @@ pipeline {
         }
         stage('AAA') {
             steps {
-                echo "$(currentBuild.currentResult)"
+                echo "${currentBuild.currentResult}"
 //                 if (currentBuild.currentResult == "SUCCESS") {
 //                     mail bcc: '', body: 'success', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
 //                 }
