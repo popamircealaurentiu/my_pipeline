@@ -31,9 +31,11 @@ pipeline {
     post {
         success {
             echo "${env.BUILD_URL} has result success"
+            mail bcc: '', body: 'success', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
         }
         failure {
             echo "${env.BUILD_URL} has result fail"
+            mail bcc: '', body: 'failed', cc: '', from: 'jenkins@home.com', replyTo: '', subject: 'Jenkins build', to: 'popamircealaurentiu@yahoo.com'
         }
     }
 }
