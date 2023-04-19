@@ -9,6 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 println "Printing to Console"
+                if (currentBuild.currentResult == "SUCCESS") { println "a" }
             }
         }
         stage('Deploy') {
