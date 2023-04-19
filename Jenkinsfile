@@ -34,11 +34,8 @@ pipeline {
         success {
             echo "${env.BUILD_URL} has result success"
             emailext(
-                bcc: '', 
                 body: 'success', 
-                cc: '', 
-                from: 'jenkins@home.com', 
-                replyTo: '', 
+                from: 'jenkins@home.com',  
                 subject: 'Jenkins build', 
                 to: 'popamircealaurentiu@yahoo.com'
             )
@@ -46,11 +43,8 @@ pipeline {
         failure {
             echo "${env.BUILD_URL} has result fail"
             emailext(
-                bcc: '', 
                 body: 'success', 
-                cc: '', 
-                from: 'jenkins@home.com', 
-                replyTo: '', 
+                from: 'jenkins@home.com',  
                 subject: 'Jenkins build', 
                 to: 'popamircealaurentiu@yahoo.com'
             )
