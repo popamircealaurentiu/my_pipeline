@@ -1,8 +1,7 @@
 import org.yaml.snakeyaml.Yaml
 
 def getEmailList() {
-    def configVal = readYaml file: "configfile.yml"
-	echo "configVal: " + configVal
+    return 'a'
 }
 
 pipeline {
@@ -15,7 +14,10 @@ pipeline {
         }
         stage('load config') {
             steps {
-                getEmailList()
+                script {
+                        def configVal = readYaml file: "configfile.yml"
+	                    echo "configVal: " + configVal
+                }
             }
         }
         stage('Test') {
