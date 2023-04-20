@@ -19,6 +19,9 @@ pipeline {
         stage('load config') {
             steps {
                 script {
+                    def ret = sh(script: 'ls -la', returnStdout: true)
+                    println ret
+
                     InputStream inputStream = new FileInputStream("test.yaml");
 
                     Yaml yaml = new Yaml();
