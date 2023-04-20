@@ -13,7 +13,7 @@ pipeline {
                     //println "Printing to Console"
                     def ret = sh(script: 'pwd', returnStdout: true)
                     println ret
-                    def ret1 = sh(script: 'uname', returnStdout: true)
+                    def ret1 = sh(script: 'whoami', returnStdout: true)
                     println ret1
                 }
             }
