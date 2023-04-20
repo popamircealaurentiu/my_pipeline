@@ -19,7 +19,7 @@ pipeline {
         stage('load config') {
             steps {
                 script {
-                    InputStream inputStream = new FileInputStream(new File("test.yaml"));
+                    InputStream inputStream = new FileInputStream(new File("./test.yaml"));
 
                     Yaml yaml = new Yaml();
                     Map<String, Object> data = yaml.load(inputStream);
