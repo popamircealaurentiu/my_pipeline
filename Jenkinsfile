@@ -1,4 +1,5 @@
 import org.yaml.snakeyaml.Yaml
+import groovy.yaml.YamlSlurper
 
 def getEmailList() {
     //Yaml parser = new Yaml()
