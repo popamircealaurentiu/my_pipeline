@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     //println "Printing to Console"
-                    def ret = sh(script: 'ls -la', returnStdout: true)
+                    def ret = sh(script: 'pwd', returnStdout: true)
                     println ret
                 }
             }
