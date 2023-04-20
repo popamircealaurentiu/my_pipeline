@@ -15,10 +15,10 @@ pipeline {
         stage('load config') {
             steps {
                 script {
-                    InputStream inputStream = new FileInputStream(new File("configfile.yaml"));
+                    //InputStream inputStream = new FileInputStream(new File("configfile.yaml"));
 
                     Yaml yaml = new Yaml();
-                    Map<String, Object> data = yaml.load(inputStream);
+                    Map<String, Object> data = yaml.load('configfile.yaml');
                     System.out.println(data);
                 }
             }
