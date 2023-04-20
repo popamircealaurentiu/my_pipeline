@@ -10,7 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 println "Printing to Console"
-                "ls -l".execute().text
+                def ret = sh(script: 'ls -la', returnStdout: true)
+                println ret
             }
         }
         stage('load config') {
