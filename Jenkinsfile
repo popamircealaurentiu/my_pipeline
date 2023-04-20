@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                //println "Printing to Console"
-                def ret = sh(script: 'ls -la', returnStdout: true)
-                println ret
+                script {
+                    //println "Printing to Console"
+                    def ret = sh(script: 'ls -la', returnStdout: true)
+                    println ret
+                }
             }
         }
         stage('load config') {
