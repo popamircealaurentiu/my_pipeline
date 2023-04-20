@@ -1,9 +1,23 @@
+import org.yaml.snakeyaml.Yaml
+
+def getEmailList() {
+    Yaml parser = new Yaml()
+    List example = parser.load(("configfile.yaml" as File).text)
+
+    println example.DEV.onSuccess
+}
+
 pipeline {
     agent any
     stages {
         stage('Build') {
             steps {
                 println "Printing to Console"
+            }
+        }
+        stage('load config') {
+            steps {
+                getEmailList()
             }
         }
         stage('Test') {

@@ -1,0 +1,11 @@
+DEV:
+  onSuccess:
+    emailList: a@yahoo.com
+  onFailure:
+    emailList: b@yahoo.com
+
+TEST:
+  onSuccess:
+    emailList: z@yahoo.com
+  onFailure:
+    emailList: h@yahoo.com
