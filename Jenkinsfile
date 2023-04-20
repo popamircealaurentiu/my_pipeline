@@ -15,8 +15,11 @@ pipeline {
         stage('load config') {
             steps {
                 script {
-                        def configVal = readYaml file: "configfile.yml"
-	                    echo "configVal: " + configVal
+                    InputStream inputStream = new FileInputStream(new File("configfile.yaml"));
+
+                    Yaml yaml = new Yaml();
+                    Map<String, Object> data = yaml.load(inputStream);
+                    System.out.println(data);
                 }
             }
         }
