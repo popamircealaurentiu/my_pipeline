@@ -50,21 +50,21 @@ pipeline {
     post {
         success {
             echo "${env.BUILD_URL} has result success"
-            emailext(
-                body: 'success', 
-                from: 'jenkins@home.com',  
-                subject: 'Jenkins build', 
-                to: 'popamircealaurentiu@yahoo.com'
-            )
+//             emailext(
+//                 body: 'success',
+//                 from: 'jenkins@home.com',
+//                 subject: 'Jenkins build',
+//                 to: 'popamircealaurentiu@yahoo.com'
+//             )
         }
         failure {
             echo "${env.BUILD_URL} has result fail"
-            emailext(
-                body: 'success', 
-                from: 'jenkins@home.com',  
-                subject: 'Jenkins build', 
-                to: 'popamircealaurentiu@yahoo.com'
-            )
+//             emailext(
+//                 body: 'success',
+//                 from: 'jenkins@home.com',
+//                 subject: 'Jenkins build',
+//                 to: 'popamircealaurentiu@yahoo.com'
+//             )
         }
     }
 }
