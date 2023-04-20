@@ -16,9 +16,9 @@ pipeline {
                     def ret1 = sh(script: 'whoami', returnStdout: true)
                     println ret1
                     def Yaml yaml = new Yaml()
-                    def resource = yaml.load("test.yaml");
+                    def resource = yaml.load(new File("test.yaml").newInputStream());
 
-                    println resource."a"
+                    println resource.a
                 }
             }
         }
