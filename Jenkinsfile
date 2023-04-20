@@ -1,10 +1,11 @@
 import org.yaml.snakeyaml.Yaml
 
 def getEmailList() {
-    Yaml parser = new Yaml()
-    List example = parser.load(("configfile.yaml" as File).text)
+    //Yaml parser = new Yaml()
+    def config = new YamlSlurper().parseText(configfile.yaml)
+    //List example = parser.load(("configfile.yaml" as File).text)
 
-    println example.DEV.onSuccess
+    println config.DEV.onSuccess
 }
 
 pipeline {
