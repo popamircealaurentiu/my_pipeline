@@ -1,12 +1,8 @@
 import org.yaml.snakeyaml.Yaml
-import groovy.yaml.YamlSlurper
 
 def getEmailList() {
-    //Yaml parser = new Yaml()
-    def config = new YamlSlurper().parseText(configfile.yaml)
-    //List example = parser.load(("configfile.yaml" as File).text)
-
-    println config.DEV.onSuccess
+    def configVal = readYaml file: "configfile.yml"
+	echo "configVal: " + configVal
 }
 
 pipeline {
