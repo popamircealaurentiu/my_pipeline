@@ -15,10 +15,7 @@ pipeline {
                     println ret
                     def ret1 = sh(script: 'whoami', returnStdout: true)
                     println ret1
-//                     def Yaml yaml = new Yaml()
-//                     def resource = yaml.load(new File("test.yaml").newInputStream());
-//
-//                     println resource.a
+
                     def yamlData = readYaml(file:'test.yaml')
                     println yamlData
                 }
@@ -30,11 +27,6 @@ pipeline {
                     def ret = sh(script: 'ls -la', returnStdout: true)
                     println ret
 
-                    InputStream inputStream = new FileInputStream("test.yaml");
-
-                    Yaml yaml = new Yaml();
-                    Map<String, Object> data = yaml.load(inputStream);
-                    System.out.println(data);
                 }
             }
         }
